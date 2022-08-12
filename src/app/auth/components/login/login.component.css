@@ -1,0 +1,11 @@
+:host ::ng-deep  section{
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-onda-blanca-suave_52683-55288.jpg?w=2000');
+}
+
+/*Estilo para la validación de error */
+div.error {
+    color: #f25961 !important;
+    font-size: 80% !important;
+    /* margin-top: 0.5rem; */
+  }
+  
