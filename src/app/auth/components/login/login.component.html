@@ -1,0 +1,63 @@
+<section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-6">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+        <div class="d-flex justify-content-center py-4">
+          <a href="index.html" class="logo d-flex align-items-center w-auto">
+            <img src="assets/img/logo.png" alt="">
+            <span class="d-none d-lg-block">SunnyShop</span>
+          </a>
+        </div><!-- End Logo -->
+
+        <div class="card mb-3">
+
+          <div class="card-body">
+
+            <div class="pt-4 pb-2">
+              <h5 class="card-title text-center pb-0 fs-4">Iniciar Sesión</h5>
+              <p class="text-center small">Ingresa tu correo y contraseña</p>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+              <div class="col-12 form-group form-floating-label {{ invalidClass(loginForm.get('email')) }}">
+                <label for="yourUsername" class="form-label">Correo</label>
+                <div class="input-group has-validation">
+                  <input type="text" formControlName="email" class="form-control input-border-bottom" required>
+                  <div class="invalid-feedback">correo electronico</div>
+                </div>
+                <div *ngIf="isInvalid(loginForm.get('email'))" class="error">
+                  {{ getErrorMessage(loginForm.get('email')) }}
+                </div>
+              </div><br>
+
+              <div class="col-12 {{ invalidClass(loginForm.get('password')) }}">
+                <label for="yourPassword" class="form-label">Contraseña</label>
+                <input type="password" formControlName="password" name="password" class="form-control" id="yourPassword"
+                  required>
+                <div class="invalid-feedback">Please enter your password!</div>
+                <div *ngIf="isInvalid(loginForm.get('password'))" class="error ">
+                  {{ getErrorMessage(loginForm.get('password')) }}
+                </div>
+              </div>
+
+              <br>
+              <div class="col-12 text-center">
+                <confirm-button styleClass="btn btn-primary btn-block" [loading]="loading" label="Iniciar Sesión"
+                  loadingLabel="Iniciando Sesión"></confirm-button>
+              </div><br>
+            </form>
+
+            <div class="col-12">
+              <p class="small mb-0"><a>Recuperar contraseña</a></p>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</section>
